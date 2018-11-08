@@ -1,0 +1,116 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[slovene]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{nopageno}
+\usepackage{lmodern}
+\usepackage{eurosym}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\graphicspath{ {./slike/} }
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+
+
+\Huge 
+\textbf{Graffiti conjecture 143}
+
+\vspace{0,5cm}
+\Large
+\textbf{Opis problema in načrt dela}
+
+\vspace{0,5cm}
+\large
+Projekt v povezavi s predmetom Operacijske raziskave
+
+
+\vspace{3cm}
+\large
+Avtorici:\\
+\textbf{Jona Gričar, Tjaša Mehle}\\
+
+\vfill
+
+\Large Ljubljana, november 2018
+\end{center}
+\end{titlepage}
+
+
+\newpage
+\section{\textbf{OPIS PROBLEMA}}
+
+\vspace{0,5cm}
+
+Graffiti je računalniški program, ki je namenjen generiranju matematičnih domnev oziroma odprtih problemov. Nekatere izmed domnev se izkažejo za resnične, nekatere pa za napačne. \\ Najina naloga pri tem projektu je, da ovrževa ali potrdiva domnevo številka 143.
+
+\vspace{0,5cm}
+
+\noindent \textbf{Domneva številka 143 pravi:}
+
+\vspace{0,5cm}
+
+\noindent  Vsak enostaven povezan garf $G$ ustreza zahtevi
+
+\begin{align*}
+tree(G) \geq \frac{g(G) + 1}{\sigma(G)}.
+\end{align*}
+
+\vspace{0,5cm}
+
+\noindent Nekaj opomb:
+
+\begin{itemize}
+	\item graf je \textbf{ENOSTAVEN}, če nima niti zank (povezava, katere začetna točka je tudi končna točka) niti vzporednih povezav (dve povezavi, ki imata skupno začetno in končno točko),
+	\item graf je \textbf{POVEZAN}, če za poljubni vozlišči $u , v \in V(G)$ obstaja sprehod (oziroma pot) od $u$ do $v$,
+	\item $g(G)$ je notranji obseg grafa $G$ (ang. girth) - tj. dolžina (število vozlišč) najkrajšega cikla grafa $G$, v primeru,da v grafu ni cikla je $g(G) =\infty $
+	\item $\sigma(G)$ je druga najmanjša stopnja v zaporedju stopenj grafa $G$, ki je enako $d_1 \leq d_2 \leq ... \leq d_{n-1} \leq d_n $,
+	\item  $tree(G)$  -  število vozlišč v največjem induciranem drevesu grafa $G$,
+	\begin{itemize}
+		\item drevo je graf, pri katerem za vsak par vozlišč $u$ in $v$ obstaja natanko ena pot od $u$ do $v$,
+		\item graf $H = (U, F)$ je podgraf grafa $G = (V, E)$, $H \subseteq G$, če velja $U \subseteq V$ in je$ F \subseteq E$,
+		\item $H$ je induciran podgraf grafa $G$, če $H \subseteq G \land \forall e = xy : \\(x , y \in V(H) \Rightarrow e \in E(H))$.
+	\end{itemize}
+\end{itemize}
+
+\newpage
+\section{\textbf{PRIMER}}
+
+\vspace{0,5cm}
+G = enostaven povezan graf s petimi vozlišči
+
+\begin{figure}[h]
+\includegraphics[scale=0.8]{graf}
+\centering
+\end{figure}
+ 
+\begin{itemize}
+\item $g(G) = 3$
+\item $\sigma(G) = 2 $
+\item $tree(G) = 4 $
+\end{itemize}
+
+\begin{align*}
+tree(G) \geq \frac{g(G) + 1}{\sigma(G)} \\
+4 \geq \frac{3 + 1}{2} \\
+4\geq 2
+\end{align*}
+
+\centering \textbf{ domenva drži}
+
+\newpage
+\section{\textbf{NAČRT DELA}}
+
+\begin{itemize}
+\item \textbf{Testiranje hipoteze:}\\ V Sage bova napisale program, ki bo za majhen $n$ zgeneriral vse enostavne povezane grafe z $n$-vozlišči in za vsakega posebaj preveril ali domneva $tree(G) \geq \frac{g(G) + 1}{\sigma(G)}$ drži. Če za nek graf domneva ne bo držala bo program izpisal, da je domneva ovržena.
+\item \textbf{Iskanje protiprimera:}\\V primeru, da pri testiranju hipoteze domneva ne bo ovržena, se bova lotile iskanja protiprimera. Pri tem si bova  pomagale z  metodo 'single-trajectory' in 'population metaheuristic'.
+
+\end{itemize}
+
+
+
+\end{document}
