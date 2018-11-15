@@ -1,7 +1,8 @@
-# Graffiti-conjecture-143
+# Graffiti-conjecture-143 ALGORITEM
 
-# ALGORITEM
+# POMOŽNE FUNKCIJE
 
+```
 def girth(G):
     if G.cycle_basis() == []:
         return oo
@@ -36,10 +37,11 @@ def tree(G):
             velikost = max(velikost, tree_backtrack(TT, SS, XX))
         return velikost
     return max(tree_backtrack(Set([u]), Set(G[u]), Set()) for u in G)
-
+```
 
 # TESTIRANJE DOMNEVE 143 ZA ENOSTAVNEN POVEZAN GRAF Z n-VOZLIŠČI:
 
+```
 def testiranje_hipoteze(n):
     vsi_EPG = list(graphs.nauty_geng(str(n)+ " -c"))
     for i in range(len(vsi_EPG)):
@@ -47,3 +49,4 @@ def testiranje_hipoteze(n):
             if tree(vsi_EPG[i]) < (girth(vsi_EPG[i]) + 1)/second_smallest_degree(vsi_EPG[i]):
                 return "DOMNEVA JE OVRZENA"
     return "DOMNEVA NI OVRZENA"
+```
