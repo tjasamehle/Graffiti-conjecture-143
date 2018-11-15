@@ -1,4 +1,6 @@
-# Graffiti-conjecture-143 ALGORITEM
+# Graffiti-conjecture-143
+
+# ALGORITEM
 
 def girth(G):
     if G.cycle_basis() == []:
