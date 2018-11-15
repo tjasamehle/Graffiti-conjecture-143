@@ -39,7 +39,7 @@ def tree(G):
     return max(tree_backtrack(Set([u]), Set(G[u]), Set()) for u in G)
 ```
 
-TESTIRANJE DOMNEVE 143 ZA ENOSTAVNEN POVEZAN GRAF Z n-VOZLIŠČI:
+TESTIRANJE DOMNEVE 143 ZA ENOSTAVEN POVEZAN GRAF Z n-VOZLIŠČI:
 
 ```
 def testiranje_hipoteze(n):
