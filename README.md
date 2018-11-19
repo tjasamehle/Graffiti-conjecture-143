@@ -2,7 +2,7 @@
 
 POMOŽNE FUNKCIJE:
 
-```
+```R
 def girth(G):
     if G.cycle_basis() == []:
         return oo
@@ -41,7 +41,7 @@ def tree(G):
 
 TESTIRANJE DOMNEVE 143 ZA ENOSTAVEN POVEZAN GRAF Z n-VOZLIŠČI:
 
-```
+```R
 def testiranje_hipoteze(n):
     vsi_EPG = list(graphs.nauty_geng(str(n)+ " -c"))
     for i in range(len(vsi_EPG)):
