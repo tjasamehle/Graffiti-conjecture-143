@@ -43,10 +43,10 @@ TESTIRANJE DOMNEVE 143 ZA ENOSTAVEN POVEZAN GRAF Z n-VOZLIŠČI:
 
 ```R
 def testiranje_hipoteze(n):
-    vsi_EPG = list(graphs.nauty_geng(str(n)+ " -c"))
-    for i in range(len(vsi_EPG)):
-        if girth(vsi_EPG[i])< oo:
-            if tree(vsi_EPG[i]) < (girth(vsi_EPG[i]) + 1)/second_smallest_degree(vsi_EPG[i]):
+    EPG = list(graphs.nauty_geng(str(n)+ " -c"))
+    for i in range(len(EPG)):
+        if girth(EPG[i]) < oo:
+            if tree(EPG[i]) < (girth(EPG[i]) + 1) / second_smallest_degree(EPG[i]):
                 return "DOMNEVA JE OVRZENA"
     return "DOMNEVA NI OVRZENA"
 ```
